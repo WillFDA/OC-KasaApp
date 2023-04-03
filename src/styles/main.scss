@@ -1,0 +1,9 @@
+@import './base/boilerplate';
+@import './base/variables';
+@import './utils/mixins';
+@import './base/boilerplate';
+@import '../components/Navbar/_navbar';
+@import '../pages/Home/home';
+@import '../pages/About/about';
+@import '../pages/LocationPages/locationPages';
+// @import '../components/Footer/';

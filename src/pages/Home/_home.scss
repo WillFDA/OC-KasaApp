@@ -1,0 +1,50 @@
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 1240px;
+    margin: auto;
+    margin-top: 3.5rem;
+
+    &__title {
+        position:absolute;
+        margin: auto;
+        z-index: 1;
+        color: white;
+        font-size: 3rem;
+    }
+
+    &__img {
+        object-fit: cover;
+        height: 223px;
+        width: 100%;
+        border-radius: 2.5rem;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 0; 
+        border-radius: 2.5rem;
+    }
+}
+
+.location__container {
+    margin: auto;
+    margin-top: 2.5rem;
+    width: 100%;
+    max-width: 1240px;
+    background-color: #F6F6F6;
+    border-radius: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-gap: 50px;
+    padding: 3.125rem;
+  }
+  
