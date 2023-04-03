@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import data from '../../Data/annonces.json';
+import ImageSlider from "../../components/ImageSlider/ImageSlider";
 export default function LocationPages() {
     const { id } = useParams();
     const location = data.find((item) => item.id === id);
-    console.log(location)
-    console.log(id)
+    
+
     return(
         <>
+        <ImageSlider location={location} />
         </>
     )
 }
