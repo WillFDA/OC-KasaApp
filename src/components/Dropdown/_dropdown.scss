@@ -1,40 +1,18 @@
-// .dropdown {
-//     position: relative;
-//     display: inline-block;
-//     cursor: pointer;
-//     width: 100%;
+@import '../../styles/utils/mixins';
 
-//     &__title {
-//         color: white;
-//         background-color: #ff6060;
-//     }
-//   }
-  
-//   .dropdown__content {
-//     display: none;
-//     position: absolute;
-//     background-color: #f9f9f9;
-//     min-width: 160px;
-//     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-//     padding: 12px 16px;
-//     z-index: 1;
-//   }
-  
-//   .dropdown.open .dropdown__content {
-//     display: block;
-//   }
-
-
-  
-
-  
   .dropdown {
     flex: 1;
     display: flex;
     flex-direction: column;
     margin-top: 26px;
+    @include mobile {
+      margin-top: 0px;
+    }
   
     &__title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       cursor: pointer;
       background-color: #ff6060;
       padding: 13px 20px;
@@ -47,6 +25,19 @@
       margin: 0;
       z-index: 1;
       font-size: 18px;
+      @include mobile {
+        font-size: 13px;
+      }
+    }
+    &__title--arrow {
+      margin-left: 0.5rem;
+      @include mobile {
+        width: 16px;
+      }
+    }
+
+    &__title--arrow.opened {
+      transform: rotate(180deg);
     }
   
     &__content {
@@ -62,11 +53,18 @@
         font-size: 18px;
         line-height: 142%;
         font-weight: 400;
+        @include mobile {
+          font-size: 12px;
+        }
     }
     &__content--li {
         color: #ff6060;
         margin: 10px 0px;
         font-size: 18px;
         font-weight: 400;
+        @include mobile {
+          font-size: 12px;
+          margin: 5px 0px;
+        }
     }
   }

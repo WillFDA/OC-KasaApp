@@ -1,17 +1,28 @@
+@import '../../styles/utils/mixins';
 .slider {
     position: relative;
-    max-width: 1240px;
+    max-width: 1280px;
+    padding-left: 20px;
+    padding-right: 20px;
     height: 415px;
     border-radius: 25px;
     margin: auto;
     margin-top: 25px;
     overflow: hidden;
+    @include mobile {
+        height: 255px;
+        margin-top: 0px;
+
+    }
 
     &__img {
         object-fit: cover;
         width: 100%;
         height: 415px;
         border-radius: 25px;
+        @include mobile{
+            height: 255px;
+        }
     }
 
     &__arrows {
@@ -23,10 +34,18 @@
         left: 0;
         right: 0;
         bottom: 0;
-        margin: 0px 23px 0px 23px;
+        padding-right: 50px;
+        padding-left: 50px;
+        @include mobile {
+            padding-right: 23px;
+            padding-left: 23px;
+        }
     }
     &--left, &--right {
         cursor: pointer;
+        @include mobile {
+            height: 20px;
+        }
     }
 
 }

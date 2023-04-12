@@ -1,11 +1,19 @@
+@import '../../styles/utils/mixins';
+
 .location__container {
-    margin-top: 2.5rem;
-    width: 100%;
-    background-color: #F6F6F6;
-    border-radius: 2.5rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    grid-gap: 50px;
-    padding: 3.125rem;
+  margin-top: 2.5rem;
+  width: 100%;
+  background-color: #F6F6F6;
+  border-radius: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-gap: 50px;
+  padding: 3.125rem;
+
+  @include mobile {
+    background-color: transparent;
+    padding: 0;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
   }
-  
+}

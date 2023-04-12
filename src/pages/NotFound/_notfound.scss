@@ -1,0 +1,25 @@
+@import '../../styles/base/variables';
+
+.error__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $primary-color;
+}
+
+.error {
+    &__title {
+        font-size: 288px;
+        text-align: center;
+        margin-top: 186px;
+        margin-bottom: 66px;
+    }
+
+    &__subtitle {
+        font-size: 36px;
+    }
+
+    &__link {
+        color: $primary-color;
+    }
+}

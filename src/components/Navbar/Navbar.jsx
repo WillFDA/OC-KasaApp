@@ -1,22 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './_navbar.scss';
 import { ReactComponent as LogoKasa } from '../../assets/logo_kasa.svg';
 
 export default function Navbar() {
+  
+  const navLocation = useLocation();
+  const cheminActuel = navLocation.pathname;
   return (
-    <nav className='nav'>
+    <header className='header'>
       <Link to="/">
-        <LogoKasa className="nav__logo" />
+        <LogoKasa className="header__logo" />
       </Link>
-      <ul className='nav__links'>
+      <nav className='nav__links'>
         <li>
-          <Link to="/" className="nav__link--item">Accueil</Link>
+        <Link to="/" className={`nav__link--item ${cheminActuel === '/' ? 'active' : ''}`}>Accueil</Link>
         </li>
         <li>
-          <Link to="/about" className="nav__link--item">À propos</Link>
+        <Link to="/about" className={`nav__link--item ${cheminActuel === '/about' ? 'active' : ''}`}>A propos</Link>
         </li>
-      </ul>
-    </nav>
+      </nav>
+    </header>
   );
 }

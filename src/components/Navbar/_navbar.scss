@@ -1,20 +1,43 @@
 @import '../../styles/utils/mixins';
 
-.nav {
-    max-width: 1240px;
+.header {
+    max-width: 1280px;
+    padding-left: 20px;
+    padding-right: 20px;
     display: flex;
     justify-content: space-between;
     margin: auto;
     margin-top: 2.5rem;
-    &__links {
+    @include mobile {
+        margin-top: 1.2rem;   
+    }
+    .nav__links {
         display: flex;
+        align-items: center;
         list-style: none;
         gap: 60px;
+        padding: 0;
+        margin: 0;
+        @include mobile {
+            gap: 1rem;
+        }
     }
-    &__link--item {
+    .nav__link--item {
         text-decoration: none;
+        color: #FF6060;
+        margin: 0;
+        padding: 0;
+        &.active {
+            text-decoration: underline;
+          }
     }
     &__logo path {
         fill: #FF6060;
+    }
+
+    &__logo {
+        @include mobile {
+            width: 145px;
+        }
     }
 }

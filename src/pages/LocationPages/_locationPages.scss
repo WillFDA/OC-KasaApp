@@ -1,13 +1,25 @@
+@import '../../styles/utils/mixins';
+
 .information {
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
+    @include mobile {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 15px;
+    }
 
     &__right {
         display: flex;
         flex-direction: column;
-        justify-content: start;
-        align-items: end;
+        justify-content: flex-start;
+        align-items: flex-end;
+        @include mobile {
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
     
     &__title {
@@ -15,11 +27,17 @@
         color: $primary-color;
         margin: 0 ;
         margin-bottom: 0.5rem;
+        @include mobile {
+            font-size: 1.2rem;
+        }
     }
     &__subtitle {
         color: $primary-color;
         font-size: 1.125rem;
         margin: 0;
+        @include mobile {
+            font-size: 0.875rem;
+        }
     }
     
 
@@ -27,17 +45,23 @@
         display: flex; 
         gap: 10px;
         align-items: center;
-        justify-content: end;
+        justify-content: flex-end;
     }
 
     &__host--box {
         height: 64px;
+        @include mobile {
+            height: 32px;
+        }
     }
     &__host--img {
         object-fit: cover;
         width: 100%;
         height: 64px;
         border-radius: 100%;
+        @include mobile {
+            height: 32px;
+        }
     }
     &__host--name {
         max-width: 50%;
@@ -46,6 +70,9 @@
         text-align: right;
         color: $primary-color;
         font-size: 1.125rem;
+        @include mobile {
+            font-size: 0.8rem;
+        }
 
     }
 
@@ -53,6 +80,7 @@
         display: flex;
         gap: 10px;
         margin-top: 20px;
+        flex-wrap: wrap;
     }
 
     &__tags--item {
@@ -60,14 +88,28 @@
         background-color: $primary-color;
         padding: 3px 40px;
         border-radius: 10px;
+        font-size: 14px;
+        @include mobile {
+            padding: 3px 30px;
+            font-size: 10px;
+
+        }
     }
 
-
+    &__rating path {
+        @include mobile {
+            height: 13px;
+        }
+    }
 
     &__rating {
         display: flex;
         gap: 0.75rem;
-        margin-top: 1.5rem ;
+        margin-top: 1.5rem;
+        @include mobile {
+            margin-top: 0;
+            gap: 0.5rem; 
+        }
 
     }
 }
@@ -76,4 +118,10 @@
     display: flex;
     justify-content: space-between;
     gap: 96px;
+    @include mobile {
+        margin-top: 20px;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 1rem;
+    }
   }

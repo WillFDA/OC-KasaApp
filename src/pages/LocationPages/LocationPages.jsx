@@ -1,17 +1,24 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import data from '../../Data/annonces.json';
 import ImageSlider from "../../components/ImageSlider/ImageSlider";
 import { ReactComponent as Star } from "../../assets/star.svg";
 import Dropdown from "../../components/Dropdown/Dropdown";
 
-
-
-
 export default function LocationPages() {
     const { id } = useParams();
     const location = data.find((item) => item.id === id);
-    
+    const navigate = useNavigate();
+
+    useEffect(() => {
+      if (!location) {
+        navigate('/notfound');
+      }
+    }, [location, navigate]);
+
+    if (!location) {
+        return null;
+    }
 
     const renderStars = (rating) => {
         return Array.from({ length: 5 }, (_, index) => (
@@ -24,7 +31,6 @@ export default function LocationPages() {
             />
         ));
     };
-
 
     return(
         <>
@@ -56,7 +62,6 @@ export default function LocationPages() {
                 <Dropdown title='Description' content={location.description} />
                 <Dropdown title='Équipements' content={location.equipments} />
             </section>
-
         </main>
         </>
     )

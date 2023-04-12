@@ -1,1 +1,6 @@
 @import './styles/main.scss';
+
+.main-content {
+    min-height: calc(100vh - 4rem); /* 4rem est la hauteur du footer, ajustez cette valeur en fonction de la hauteur de votre footer */
+  }
+  

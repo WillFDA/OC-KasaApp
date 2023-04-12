@@ -1,4 +1,5 @@
-@mixin transition($property, $duration: 0.3s, $timing-function: ease) {
-    transition: $property $duration $timing-function;
+@mixin mobile {
+  @media only screen and (max-width: 800px) {
+      @content;
   }
-  
+}

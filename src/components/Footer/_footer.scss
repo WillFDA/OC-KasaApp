@@ -1,3 +1,5 @@
+@import '../../styles/utils/mixins';
+
 .footer {
     background-color: black ;
     width: 100%;
@@ -7,6 +9,7 @@
     padding: 1.875rem;
     padding-top: 3.75rem;
     margin-top: 5rem;
+
     &__logo {
         width: 122px;
     }
@@ -17,5 +20,8 @@
     &__copyright {
         color: white;
         font-size: 1.5rem;
+        @include mobile {
+            font-size: 12px;
+        }
     }
 }
