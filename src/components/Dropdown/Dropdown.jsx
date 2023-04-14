@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./_dropdown.scss";
 
-export default function Dropdown({ title, content }) {
+export default function Dropdown({ title, content, }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const renderContent = () => {

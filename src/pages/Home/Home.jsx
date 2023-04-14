@@ -7,14 +7,14 @@ import HeroBanner from '../../components/HeroBanner/HeroBanner';
 export default function Home() {
   return (
     <>
-    <main className='container'>
-      <HeroBanner image={home_image} text={'Chez vous, partout et ailleurs'} />
+    <div className='container'>
+      <HeroBanner classes={{container: 'hero', img: 'hero__img'}} image={home_image} text={'Chez vous, partout et ailleurs'} />
       <section className='location__container'>
         {data.map((location) => (
           <LocationCard key={location.id} location={location} />
         ))}
       </section>
-    </main>
+    </div>
     </>
   );
 };

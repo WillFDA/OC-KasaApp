@@ -6,7 +6,7 @@ import Dropdown from '../../components/Dropdown/Dropdown';
 export default function About() {
   return (
   <main className='container'>
-    <HeroBanner image={about_image} text={''} />
+    <HeroBanner classes={{container: 'about__hero', img: 'about__banner'}} image={about_image} text={''} />
     <section className='about__dropdown'>
     <Dropdown title='Fiabilité' content='Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes.' />
     <Dropdown title='Respect' content='La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.' />
